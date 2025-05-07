@@ -1,0 +1,17 @@
+<div class="game-board">
+  <h2>Game Board</h2>
+  <div class="grid">
+    <div *ngFor="let row of board; let rowIndex = index" class="row">
+      <div *ngFor="let cell of row; let colIndex = index" 
+           class="cell" 
+           [class.hit]="cell === 'H'" 
+           [class.miss]="cell === 'M'" 
+           [class.sunken]="cell === 'S'" 
+           (click)="handleCellClick(rowIndex, colIndex)"
+           (dragover)="handleDragOver($event)"
+           (drop)="handleDrop($event, rowIndex, colIndex)">
+        {{ cell }}
+      </div>
+    </div>
+  </div>
+</div>
