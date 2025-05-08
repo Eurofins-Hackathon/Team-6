@@ -1,0 +1,52 @@
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--board-size, 7), 30px);
+  grid-template-rows: repeat(var(--board-size, 7), 30px);
+  gap: 2px;
+}
+
+.row {
+  display: contents;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.cell:hover {
+  background-color: #ddd;
+}
+
+.cell.marked {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.cell.hit {
+  background-color: red;
+  color: white;
+}
+
+.cell.miss {
+  background-color: lightblue;
+  color: black;
+}
+
+.cell.sunken {
+  background-color: darkred;
+  color: white;
+}
